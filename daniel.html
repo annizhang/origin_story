@@ -21,8 +21,8 @@
         <source id="video" src="videos/daniel_video_1.mp4" type="video/mp4"></video>
     <div id="overlay">
         <form id="daniel-video-toggle">
-            <image id="back-button" type="image" src="logos/Arrow_left.png" onclick="changeVideo()"/>
-            <image id="forward-button" type="image" src="logos/Arrow_right.png"/>
+            <image id="back-button" type="image" src="logos/Arrow_left.png" onclick="backVideo()"/>
+            <image id="forward-button" type="image" src="logos/Arrow_right.png" onclick="nextVideo()" />
         </form>
     </div>
 </body>
@@ -33,43 +33,55 @@
         video.muted = !video.muted;
     }
 
-    function changeVideo() {
+    function backVideo() {
+        var video = document.getElementById("video-background");
         event.preventDefault()
-        console.log("on click")
-        console.log(document.getElementById("video").src);
-        switch(document.getElementById('video').src) {
-            case 'videos/daniel_video_1.mp4':
-                console.log("click on video 1 back")
+        // console.log("on click")
+        // console.log(document.getElementById("video").src);
+        var videoSource = document.getElementById('video').src
+        switch(videoSource.split('/').pop()) {
+            case 'daniel_video_1.mp4':
+                // console.log("click on video 1 back")
                 document.getElementById('video').setAttribute('src', 'videos/daniel_video_4.mp4');
                 break;
-            case 'videos/daniel_video_2.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_1.mp4';
+            case 'daniel_video_2.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_1.mp4');
                 break;
-            case 'videos/daniel_video_3.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_2.mp4';
+            case 'daniel_video_3.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_2.mp4');
                 break;
-            case 'videos/daniel_video_4.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_3.mp4';
+            case 'daniel_video_4.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_3.mp4');
                 break;
         }
+        video.load();
+        video.play();
     }
 
-    document.getElementById('forward-button').addEventListener('click', function() {
-        switch(document.getElementById('video-background').src) {
-            case 'videos/daniel_video_1.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_2.mp4';
+    function nextVideo() {
+        var video = document.getElementById("video-background");
+        event.preventDefault()
+        // console.log("on click")
+        // console.log(document.getElementById("video").src);
+        var videoSource = document.getElementById('video').src
+        switch(videoSource.split('/').pop()) {
+            case 'daniel_video_1.mp4':
+                // console.log("click on video 1 back")
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_2.mp4');
                 break;
-            case 'videos/daniel_video_2.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_3.mp4';
+            case 'daniel_video_2.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_3.mp4');
                 break;
-            case 'videos/daniel_video_3.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_4.mp4';
+            case 'daniel_video_3.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_4.mp4');
                 break;
-            case 'videos/daniel_video_4.mp4':
-                document.getElementById('video-background').src = 'videos/daniel_video_1.mp4';
+            case 'daniel_video_4.mp4':
+                document.getElementById('video').setAttribute('src', 'videos/daniel_video_1.mp4');
                 break;
         }
-    });
+        video.load();
+        video.play();
+    }
   </script>
 
 </html>

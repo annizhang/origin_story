@@ -10,6 +10,7 @@ body {
 #daniel{
     overflow: hidden;
     cursor: url('images/helmet_no_face.png'), auto;
+    background-color: black;
   
 }
 
