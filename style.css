@@ -7,7 +7,7 @@ body {
     background-color: #98F158;
 }
 
-#daniel{
+#daniel, #lindsay, #isaac{
     overflow: hidden;
     cursor: url('images/helmet_no_face.png'), auto;
     background-color: black;
@@ -35,25 +35,22 @@ h3, table {
 
   #video-background {
     position: absolute;
-    min-width: 100%; 
-    min-height: 100%;
+    width: 100%;
+    height: auto;
     z-index: 0;
-    /* -moz-transform:scale(1.5);
-    -webkit-transform:scale(1.5);
-    -o-transform:scale(1.5);
-    -ms-transform:scale(1.5);
-    transform:scale(1.5); */
   }
 
   #forward-button {
     height: 10vh;
     margin-top:50vh;
+    opacity: 50%;
     float:right;
   }
 
   #back-button {
     height: 10vh;
     margin-top:50vh;
+    opacity: 50%;
     float:left;
   }
 
