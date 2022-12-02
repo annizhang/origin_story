@@ -41,17 +41,19 @@ h3, table {
   }
 
   #forward-button {
-    height: 10vh;
+    height: 5vh;
     margin-top:50vh;
     opacity: 50%;
     float:right;
+    padding-right: 2vh;
   }
 
   #back-button {
-    height: 10vh;
+    height: 5vh;
     margin-top:50vh;
     opacity: 50%;
     float:left;
+    padding-left: 2vh;
   }
 
   #overlay{
